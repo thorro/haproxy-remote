@@ -1,0 +1,256 @@
+items:
+  required:
+    - blocks
+    - color
+    - endColor
+    - favorite
+    - hidden
+    - id
+    - isRandom
+    - lastSync
+    - name
+    - position
+    - startColor
+    - status
+    - themeId
+    - userIds
+  type: object
+  properties:
+    status:
+      type: string
+    lastSync:
+      type: integer
+    blocks:
+      items:
+        required:
+          - data
+          - id
+          - options
+          - type
+        type: object
+        properties:
+          type:
+            type: string
+          originateFrom:
+            type: integer
+          data:
+            items:
+              required:
+                - title
+              type: object
+              properties:
+                startDate:
+                  type: string
+                endDate:
+                  type: string
+                compareEndDate:
+                  type: string
+                title:
+                  type: string
+                items:
+                  items:
+                    required:
+                      - itemId
+                    type: object
+                    properties:
+                      itemId:
+                        type: integer
+                      valueFormat:
+                        type: string
+                      scale:
+                        type: integer
+                      title:
+                        type: string
+                      changeValue:
+                        type: number
+                      attribute:
+                        type: string
+                      changeType:
+                        type: integer
+                      extra:
+                        required:
+                          - max
+                          - maxStr
+                        type: object
+                        properties:
+                          max:
+                            type: integer
+                          maxStr:
+                            type: string
+                      value:
+                        type: number
+                      label:
+                        type: string
+                      changeInvert:
+                        type: boolean
+                      metricKey:
+                        type: string
+                      date:
+                        type: integer
+                      changeStr:
+                        type: string
+                      valueStr:
+                        type: string
+                      unit:
+                        type: string
+                      icon:
+                        type: string
+                  type: array
+                axes:
+                  required:
+                    - x
+                    - 'y'
+                  type: object
+                  properties:
+                    'y':
+                      required:
+                        - format
+                        - scale
+                      type: object
+                      properties:
+                        scale:
+                          type: integer
+                        format:
+                          type: string
+                    x:
+                      required:
+                        - labels
+                      type: object
+                      properties:
+                        labels:
+                          items:
+                            type: string
+                          type: array
+                compareStartDate:
+                  type: string
+                intervalChangeTitle:
+                  type: string
+                series:
+                  items:
+                    required:
+                      - groupId
+                      - items
+                      - slot
+                      - title
+                    type: object
+                    properties:
+                      slot:
+                        type: integer
+                      subtitle:
+                        type: string
+                      title:
+                        type: string
+                      metricKey:
+                        type: string
+                      items:
+                        items:
+                          required:
+                            - date
+                            - itemId
+                            - metricKey
+                            - unit
+                          type: object
+                          properties:
+                            itemId:
+                              type: integer
+                            valueFormat:
+                              type: string
+                            scale:
+                              type: integer
+                            title:
+                              type: string
+                            metricKey:
+                              type: string
+                            attribute:
+                              type: string
+                            changeType:
+                              type: integer
+                            extra:
+                              required:
+                                - deals
+                                - dealsFormat
+                                - dealsScale
+                                - dealsStr
+                              type: object
+                              properties:
+                                deals:
+                                  type: integer
+                                dealsStr:
+                                  type: string
+                                dealsFormat:
+                                  type: string
+                                dealsScale:
+                                  type: integer
+                            value:
+                              type: number
+                            label:
+                              type: string
+                            deals:
+                              type: integer
+                            changeValue:
+                              type: number
+                            changeStr:
+                              type: string
+                            date:
+                              type: integer
+                            changeInvert:
+                              type: boolean
+                            valueStr:
+                              type: string
+                            unit:
+                              type: string
+                        type: array
+                      dottedLineSegments:
+                        type: integer
+                      label:
+                        type: string
+                      intervalChangeTitle:
+                        type: string
+                      attribute:
+                        type: string
+                      groupId:
+                        type: string
+                      unit:
+                        type: string
+                  type: array
+                type:
+                  type: string
+            type: array
+          id:
+            type: integer
+          options:
+            anyOf:
+              - type: array
+              - required:
+                  - isStacked
+                type: object
+                properties:
+                  isStacked:
+                    type: boolean
+      type: array
+    name:
+      type: string
+    themeId:
+      type: 'null'
+    color:
+      type: string
+    userIds:
+      items:
+        type: integer
+      type: array
+    favorite:
+      type: boolean
+    isRandom:
+      type: boolean
+    endColor:
+      type: string
+    position:
+      type: integer
+    hidden:
+      type: boolean
+    startColor:
+      type: string
+    id:
+      type: integer
+$schema: 'http://json-schema.org/schema#'
+type: array
